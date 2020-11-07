@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "856218186388",
+    "firebase_url": "https://dietechtic-v01.firebaseio.com",
+    "project_id": "dietechtic-v01",
+    "storage_bucket": "dietechtic-v01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:856218186388:android:98eaf9ea5a3a62d880ba81",
+        "android_client_info": {
+          "package_name": "com.ihc.dietechtic_v01"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "856218186388-g7b40pk6qa6kjb7492520aui6tge4jdh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ihc.dietechtic_v01",
+            "certificate_hash": "fc8ecbcb08f0d8f3f0410efc5e5add21ff5c3ad1"
+          }
+        },
+        {
+          "client_id": "856218186388-skt4hrvcotgfgao41okmq2b017caucma.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWv9M02-9qPiC1bOSJyFl7hRRJgdH8txk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "856218186388-skt4hrvcotgfgao41okmq2b017caucma.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
