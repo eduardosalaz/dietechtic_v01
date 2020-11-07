@@ -8,7 +8,7 @@ Aplicaci√≥n de dietas para contrarrestar los efectos nocivos de enfermedades cr√
 
 ## Building
 
-Tener (Flutter) [https://flutter.dev/] instalado y configurado.
+Tener (Flutter)[https://flutter.dev/] instalado y configurado.
 
 Clonar el repositorio y abrirlo como proyecto dentro de Android Studio, ejecutar flutter pub get.
 
