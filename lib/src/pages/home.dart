@@ -1,4 +1,4 @@
-import 'package:dietechtic_v01/src/authentication_service.dart';
+import 'package:dietechtic_v01/src/utils/authentication_service.dart';
 import 'package:dietechtic_v01/src/widgets/footer_general.dart';
 import 'package:dietechtic_v01/src/widgets/header_general.dart';
 import 'package:flutter/material.dart';
