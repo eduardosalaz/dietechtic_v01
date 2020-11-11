@@ -50,4 +50,14 @@ class AuthenticationService {
       return e.message;
     }
   }
+
+  void recibir(String nombre, int edad, String genero) {
+    String edad_str = edad as String;
+    print("El nombre es " +
+        nombre +
+        " La edad es " +
+        edad_str +
+        " Y el genero es: " +
+        genero);
+  }
 }

@@ -1,5 +1,5 @@
+import 'package:dietechtic_v01/src/pages/landing_page.dart';
 import 'package:dietechtic_v01/src/utils/authentication_service.dart';
-import 'package:dietechtic_v01/src/pages/home.dart';
 import 'package:dietechtic_v01/src/pages/login_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -46,7 +46,7 @@ class AuthenticationWrapper extends StatelessWidget {
     final firebaseUser = context.watch<User>();
 
     if (firebaseUser != null) {
-      return HomePage();
+      return LandingPage();
     }
     return LoginPage();
   }

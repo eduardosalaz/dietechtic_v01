@@ -12,4 +12,3 @@ Tener [Flutter](https://flutter.dev/)
 instalado y configurado.
 
 Clonar el repositorio y abrirlo como proyecto dentro de Android Studio, ejecutar flutter pub get.
-
