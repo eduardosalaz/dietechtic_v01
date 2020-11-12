@@ -146,6 +146,8 @@ class MyCustomFormState extends State<MyCustomForm> {
   final TextEditingController ageController = TextEditingController();
   String _value;
   List<String> generos = ["Masculino", "Femenino"];
+  List<String> enfermedades = ["Diabetes", "Hipotiroidismo", "Anemia"];
+  String dropdownValue2 = "Diabetes";
   String dropdownValue = "Masculino";
 
   @override
@@ -232,6 +234,38 @@ class MyCustomFormState extends State<MyCustomForm> {
             }).toList(),
             onSaved: (val) => setState(() => _value),
           ),
+          SizedBox(
+            height: 10,
+          ),
+          Text(
+            'Enfermedad Crónica',
+            style: TextStyle(
+              color: Color(0xff73a270),
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+            ),
+          ),
+          DropdownButtonFormField<String>(
+            value: dropdownValue2,
+            hint: Text('Seleccione su padecimiento'),
+            onChanged: (String nuevo) {
+              setState(() {
+                dropdownValue2 = nuevo;
+              });
+            },
+            validator: (String value) {
+              if (value?.isEmpty ?? true) {
+                return 'Error';
+              }
+            },
+            items: enfermedades.map<DropdownMenuItem<String>>((String value) {
+              return DropdownMenuItem<String>(
+                value: value,
+                child: Text(value),
+              );
+            }).toList(),
+            onSaved: (val) => setState(() => _value),
+          ),
           SizedBox(height: 20),
           RaisedButton(
             child: Text(
@@ -258,10 +292,12 @@ class MyCustomFormState extends State<MyCustomForm> {
     String nombre = nameController.text.trim();
     String edad = ageController.text.trim();
     String genero = dropdownValue;
-    var lst = new List(3);
+    String enfermedad = dropdownValue2;
+    var lst = new List(4);
     lst[0] = nombre;
     lst[1] = edad;
     lst[2] = genero;
+    lst[3] = enfermedad;
     Navigator.of(context).pushNamed('/mandar_datos', arguments: lst);
   }
 }

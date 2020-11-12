@@ -11,12 +11,31 @@ class EnviarInfoPage extends StatelessWidget {
     @required this.data,
   }) : super(key: key);
 
+  createAlertDialog(BuildContext context) {
+    return showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text('Información guardada exitosamente'),
+            content: Text('Se ha guardado la información en el servidor'),
+            actions: <Widget>[
+              MaterialButton(
+                  child: Text('Continuar'),
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/');
+                  })
+            ],
+          );
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     String nombre = data[0];
     String edad = data[1];
     String genero = data[2];
+    String enfermedad = data[3];
     return Scaffold(
       body: Container(
         width: double.infinity,
@@ -85,15 +104,52 @@ class EnviarInfoPage extends StatelessWidget {
                             textAlign: TextAlign.center,
                           ),
                           SizedBox(height: 20),
+                          Text(
+                            'Padecimiento crónico:',
+                            style: TextStyle(fontSize: 18),
+                            textAlign: TextAlign.center,
+                          ),
+                          Text(
+                            '$enfermedad',
+                            style: TextStyle(fontSize: 18),
+                            textAlign: TextAlign.center,
+                          ),
                           Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              RaisedButton(
-                                  onPressed: () {}, child: Text('Mandar')),
+                              RaisedButton.icon(
+                                onPressed: () {
+                                  createAlertDialog(context);
+                                },
+                                icon: Icon(Icons.send),
+                                label: Text(
+                                  'Mandar',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                  ),
+                                ),
+                                elevation: 5.0,
+                                color: Color(0xff73a270),
+                                shape: StadiumBorder(),
+                              ),
                               SizedBox(width: 10),
-                              RaisedButton(
-                                  onPressed: () {}, child: Text('Volver')),
+                              RaisedButton.icon(
+                                onPressed: () {
+                                  Navigator.of(context)
+                                      .pushNamed('/info_basica');
+                                },
+                                icon: Icon(Icons.backspace),
+                                label: Text(
+                                  'Volver',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                  ),
+                                ),
+                                elevation: 5.0,
+                                color: Color(0xff77a270),
+                                shape: StadiumBorder(),
+                              ),
                             ],
                           )
                         ],
