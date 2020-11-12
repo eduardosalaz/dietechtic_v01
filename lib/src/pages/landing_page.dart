@@ -26,7 +26,9 @@ class _LandingPageState extends State<LandingPage> {
             FooterGeneral(),
             SingleChildScrollView(
               child: Container(
-                padding: EdgeInsets.only(left: screenSize.width * 0.12),
+                padding: EdgeInsets.only(
+                    left: screenSize.width * 0.12,
+                    right: screenSize.width * 0.12),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
@@ -42,7 +44,8 @@ class _LandingPageState extends State<LandingPage> {
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Color(0xff73a720),
-                          fontSize: 30),
+                          fontSize: 20),
+                      textAlign: TextAlign.center,
                     ),
                     Text(
                       'Como es tu primera vez, te haremos algunas preguntas de información',
@@ -51,12 +54,46 @@ class _LandingPageState extends State<LandingPage> {
                         color: Colors.black,
                         fontSize: 20,
                       ),
+                      textAlign: TextAlign.center,
                     ),
                     RaisedButton(
-                      child: Text('Siguiente'),
+                      child: Text(
+                        'Siguiente',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                      ),
                       onPressed: () {
                         Navigator.of(context).pushNamed('/info_basica');
                       },
+                      elevation: 5.0,
+                      color: Color(0xff73a720),
+                      //splashColor: Color(0xff567c18),
+                      //animationDuration: Duration(
+                      //  seconds: 1), //color oscuro cuando se seleccione
+                    ),
+                    SizedBox(
+                      height: screenSize.height * 0.25,
+                    ),
+                    SizedBox(
+                      height: screenSize.height * 0.025,
+                    ),
+                    RaisedButton(
+                      child: Text(
+                        'Cerrar Sesión',
+                        style: TextStyle(
+                          fontSize: 16,
+                        ),
+                      ),
+                      onPressed: () {
+                        context.read<AuthenticationService>().signOut();
+                      },
+                      elevation: 2.0,
+                      color: Color(0xff567c18),
+                      //splashColor: Color(0xff567c18),
+                      //animationDuration: Duration(
+                      //  seconds: 1), //color oscuro cuando se seleccione
                     )
                   ],
                 ),

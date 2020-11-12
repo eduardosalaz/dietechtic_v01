@@ -213,7 +213,7 @@ class MyCustomFormState extends State<MyCustomForm> {
           ),
           DropdownButtonFormField<String>(
             value: dropdownValue,
-            hint: Text('Seleccione su genero'),
+            hint: Text('Seleccione su género'),
             onChanged: (String nuevo) {
               setState(() {
                 dropdownValue = nuevo;
@@ -232,11 +232,23 @@ class MyCustomFormState extends State<MyCustomForm> {
             }).toList(),
             onSaved: (val) => setState(() => _value),
           ),
+          SizedBox(height: 20),
           RaisedButton(
-              child: Text('Mandar datos'),
-              onPressed: () {
-                leerDatos();
-              }),
+            child: Text(
+              'Mandar datos',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
+              ),
+            ),
+            onPressed: () {
+              leerDatos();
+            },
+            elevation: 5.0,
+            color: Color(0xff73a720),
+            splashColor: Color(0xff567c18),
+            animationDuration: Duration(seconds: 1),
+          ),
         ],
       ),
     );

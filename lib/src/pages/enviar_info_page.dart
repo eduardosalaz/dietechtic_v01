@@ -1,4 +1,3 @@
-import 'package:dietechtic_v01/src/utils/authentication_service.dart';
 import 'package:dietechtic_v01/src/widgets/footer_general.dart';
 import 'package:dietechtic_v01/src/widgets/header_general.dart';
 import 'package:flutter/cupertino.dart';
@@ -28,7 +27,9 @@ class EnviarInfoPage extends StatelessWidget {
             FooterGeneral(),
             SingleChildScrollView(
               child: Container(
-                padding: EdgeInsets.only(left: screenSize.width * 0.12),
+                padding: EdgeInsets.only(
+                    left: screenSize.width * 0.12,
+                    right: screenSize.width * 0.12),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
@@ -42,7 +43,8 @@ class EnviarInfoPage extends StatelessWidget {
                       width: screenSize.width * 0.65,
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Text(
                             'Confirmacion de datos',
@@ -53,24 +55,46 @@ class EnviarInfoPage extends StatelessWidget {
                           ),
                           SizedBox(height: 20),
                           Text(
-                            'Nombre completo:$nombre',
+                            'Nombre completo:',
                             style: TextStyle(fontSize: 18),
+                            textAlign: TextAlign.center,
+                          ),
+                          Text(
+                            '$nombre',
+                            style: TextStyle(fontSize: 18),
+                            textAlign: TextAlign.center,
                           ),
                           SizedBox(height: 20),
                           Text(
-                            'Edad:$edad',
+                            'Edad:',
                             style: TextStyle(fontSize: 18),
+                            textAlign: TextAlign.center,
+                          ),
+                          Text(
+                            '$edad',
+                            style: TextStyle(fontSize: 18),
+                            textAlign: TextAlign.center,
                           ),
                           SizedBox(height: 20),
                           Text(
-                            'Genero:$genero',
+                            'Género:',
                             style: TextStyle(fontSize: 18),
+                            textAlign: TextAlign.center,
+                          ),
+                          Text(
+                            '$genero',
+                            style: TextStyle(fontSize: 18),
+                            textAlign: TextAlign.center,
                           ),
                           SizedBox(height: 20),
                           Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              RaisedButton(child: Text('Confirmar Datos')),
-                              RaisedButton(child: Text('Volver')),
+                              RaisedButton(
+                                  onPressed: () {}, child: Text('Mandar')),
+                              SizedBox(width: 10),
+                              RaisedButton(
+                                  onPressed: () {}, child: Text('Volver')),
                             ],
                           )
                         ],
