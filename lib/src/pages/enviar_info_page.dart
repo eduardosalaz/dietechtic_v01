@@ -27,9 +27,7 @@ class EnviarInfoPage extends StatelessWidget {
             FooterGeneral(),
             SingleChildScrollView(
               child: Container(
-                padding: EdgeInsets.only(
-                    left: screenSize.width * 0.12,
-                    right: screenSize.width * 0.12),
+                padding: EdgeInsets.only(left: screenSize.width * 0.12),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
@@ -89,6 +87,7 @@ class EnviarInfoPage extends StatelessWidget {
                           SizedBox(height: 20),
                           Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               RaisedButton(
                                   onPressed: () {}, child: Text('Mandar')),
