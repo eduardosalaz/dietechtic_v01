@@ -22,7 +22,7 @@ class EnviarInfoPage extends StatelessWidget {
               MaterialButton(
                   child: Text('Continuar'),
                   onPressed: () {
-                    Navigator.of(context).pushNamed('/');
+                    Navigator.of(context).pushNamed('/comidas_main');
                   })
             ],
           );

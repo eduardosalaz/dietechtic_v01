@@ -1,3 +1,5 @@
+import 'package:dietechtic_v01/src/pages/comida_descripcion.dart';
+import 'package:dietechtic_v01/src/pages/comidas_page.dart';
 import 'package:dietechtic_v01/src/pages/enviar_info_page.dart';
 import 'package:dietechtic_v01/src/pages/info_basica.dart';
 import 'package:dietechtic_v01/src/pages/objetivos_page.dart';
@@ -18,6 +20,10 @@ class RouteGenerator {
       //return MaterialPageRoute(builder: (_) => EnviarInfoBasica());
       case '/mandar_datos':
         return MaterialPageRoute(builder: (_) => EnviarInfoPage(data: args));
+      case '/comidas_main':
+        return MaterialPageRoute(builder: (_) => ComidasPage());
+      case '/comidas_desc':
+        return MaterialPageRoute(builder: (_) => ComidaDescripcionPage());
       default:
         return _errorRoute();
     }

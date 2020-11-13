@@ -26,6 +26,21 @@ class RegistroPage extends StatelessWidget {
         });
   }
 
+  createAlertDialogPasswd(BuildContext context) {
+    return showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text('Error al registrar usuario'),
+            content: Text(
+                'Una cuenta ya existe con ese correo o la contraseña es débil'),
+            actions: <Widget>[
+              MaterialButton(child: Text('Volver'), onPressed: () {})
+            ],
+          );
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
@@ -68,7 +83,8 @@ class RegistroPage extends StatelessWidget {
                           TextFormField(
                             controller: passwordController,
                             obscureText: true,
-                            decoration: InputDecoration(hintText: 'Contraseña'),
+                            decoration: InputDecoration(
+                                hintText: 'Contraseña (Mínimo 6 caracteres)'),
                           ),
                           SizedBox(
                             height: 35,
@@ -77,10 +93,16 @@ class RegistroPage extends StatelessWidget {
                             onPressed: () {
                               String email = emailController.text.trim();
                               String pass = passwordController.text.trim();
-                              context
-                                  .read<AuthenticationService>()
-                                  .signUp(email: email, password: pass);
-                              createAlertDialog(context);
+                              int longitud = email.length;
+                              print(longitud);
+                              if (longitud < 6) {
+                                createAlertDialogPasswd(context);
+                              } else {
+                                context
+                                    .read<AuthenticationService>()
+                                    .signUp(email: email, password: pass);
+                                createAlertDialog(context);
+                              }
                             },
                             color: Theme.of(context).primaryColor,
                             textColor: Colors.white,
