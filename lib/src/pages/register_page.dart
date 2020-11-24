@@ -14,10 +14,10 @@ class RegistroPage extends StatelessWidget {
         builder: (context) {
           return AlertDialog(
             title: Text('Usuario Registrado'),
-            content: Text('Se ha registrado al usuario de manera exitosa'),
+            content: Text('Se ha registrado al usuario de manera exitosa, se iniciara sesión automaticamente.'),
             actions: <Widget>[
               MaterialButton(
-                  child: Text('Volver a la pantalla de inicio'),
+                  child: Text('Continuar'),
                   onPressed: () {
                     Navigator.of(context).pushNamed('/');
                   })

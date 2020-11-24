@@ -172,6 +172,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               return nameController.text.trim();
             },
             controller: nameController,
+            textCapitalization: TextCapitalization.sentences,
             decoration: InputDecoration(
               labelText: 'Nombre Completo',
             ),

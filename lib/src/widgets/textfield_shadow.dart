@@ -70,6 +70,8 @@ class _TextFieldShadow extends StatelessWidget {
       child: TextField(
         controller: this.controller,
         textAlign: TextAlign.center,
+        autocorrect: true,
+        textCapitalization: TextCapitalization.sentences,
         style: TextStyle(
           fontSize: screenSize.height*0.018,
           fontWeight: FontWeight.bold

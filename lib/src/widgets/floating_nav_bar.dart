@@ -45,18 +45,6 @@ class FloatingNavBar extends StatelessWidget {
                   text: 'Inicio',
                 ),
                 _IconFloatingNavBar(
-                  index: 1,
-                  screenSize: screenSize,
-                  icon: FontAwesomeIcons.userAlt,
-                  text: 'Mi Cuenta',
-                ),
-                _IconFloatingNavBar(
-                  index: 2,
-                  screenSize: screenSize,
-                  icon: FontAwesomeIcons.trophy,
-                  text: 'Mis Metas',
-                ),
-                _IconFloatingNavBar(
                   index: 3,
                   screenSize: screenSize,
                   icon: FontAwesomeIcons.cog,
@@ -76,7 +64,7 @@ class _IconFloatingNavBar extends StatelessWidget {
     @required this.index,
     @required this.screenSize, 
     @required this.icon,
-    @required this.text
+    @required this.text,
   });
 
   final int index;

@@ -52,7 +52,7 @@ class _Recetas extends StatelessWidget {
         SizedBox(height: screenSize.height*0.2,),
         ToogleButtonList(
           height: screenSize.height*0.05,
-          opciones: ['desayuno', 'comida', 'cena'],
+          opciones: ['Desayuno', 'Comida', 'Cena'],
           onPressed: (value){print('$value');},
           activeColor: Color(0xff73a270),
           activeTextColor: Colors.white,
