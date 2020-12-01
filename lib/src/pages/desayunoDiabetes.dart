@@ -1,4 +1,6 @@
-import 'package:dietechtic_v01/src/widgets/carrousel_photo.dart';
+import 'package:dietechtic_v01/src/pages/enviar_info_page.dart';
+import 'package:dietechtic_v01/src/pages/comidaDiabetes.dart';
+import 'package:dietechtic_v01/src/widgets/carrouselDesayunoDiab.dart';
 import 'package:dietechtic_v01/src/widgets/floating_nav_bar.dart';
 import 'package:dietechtic_v01/src/widgets/footer_general.dart';
 import 'package:dietechtic_v01/src/widgets/header_general.dart';
@@ -6,14 +8,21 @@ import 'package:dietechtic_v01/src/widgets/title_widget_page.dart';
 import 'package:dietechtic_v01/src/widgets/toogle_button_widget.dart';
 import 'package:flutter/material.dart';
 
-
-class ComidasPage extends StatefulWidget {
-
-  @override
+bool estadoDesayuno = true;
+class DesayunoDiabetes extends StatefulWidget {
+  
+  
+  
+  
+@override
   _ComidasPageState createState() => _ComidasPageState();
+
+
+
 }
 
-class _ComidasPageState extends State<ComidasPage> {
+class _ComidasPageState extends State<DesayunoDiabetes> {
+  
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
@@ -23,7 +32,7 @@ class _ComidasPageState extends State<ComidasPage> {
         child: Stack(
           children: <Widget>[
             HeaderGeneral(),
-            TitleWidgetPage(title: 'Nunca te rindas'),
+            TitleWidgetPage(title: 'Diabetes  '),
             Align(
               alignment: Alignment.bottomCenter,
               child: FooterGeneral()
@@ -40,26 +49,46 @@ class _ComidasPageState extends State<ComidasPage> {
         ),
       )
    );
+    
   }
+
+  
 }
 
 class _Recetas extends StatelessWidget {
+  
+  
   @override
+  
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
+    
     return Column(
       children: <Widget>[
+        
         SizedBox(height: screenSize.height*0.2,),
         ToogleButtonList(
           height: screenSize.height*0.05,
+          
           opciones: ['Desayuno', 'Comida', 'Cena'],
-          onPressed: (value){print('$value');},
+          onPressed: (int value){
+            if('$value'=='1'){
+              Navigator.of(context).pushReplacementNamed('/comidaDiabetes'); 
+            }
+            else if('$value' == '2'){
+              Navigator.of(context).pushReplacementNamed('/cenaDiabetes'); 
+            }
+            
+            
+          },
+          
           activeColor: Color(0xff73a270),
           activeTextColor: Colors.white,
           inactiveTextColor: Colors.black,
         ),
         SizedBox(height: screenSize.height*0.02,),
-        CarouselPhoto(),
+        DesayunoDiab(),
+        
         SizedBox(height: screenSize.height*0.02,),
         Text(
           'Consejo del día',
@@ -74,5 +103,11 @@ class _Recetas extends StatelessWidget {
         )
       ],
     );
+    
+    
   }
+  
+
+  
+ 
 }

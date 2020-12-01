@@ -3,7 +3,11 @@ import 'package:dietechtic_v01/src/widgets/header_general.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+String enfermedadCondition;
+
 class EnviarInfoPage extends StatelessWidget {
+ 
+  
   final List data;
 
   EnviarInfoPage({
@@ -22,12 +26,23 @@ class EnviarInfoPage extends StatelessWidget {
               MaterialButton(
                   child: Text('Continuar'),
                   onPressed: () {
-                    Navigator.of(context).pushNamed('/comidas_main');
+                   
+                    switch(enfermedadCondition){
+                      case 'Diabetes': Navigator.of(context).pushNamed('/desayunoDiabetes'); 
+                            break;
+                      case 'Hipotiroidismo': Navigator.of(context).pushNamed('/mainHipotiroidismo');
+                            break;
+                    }
+                    
+              
+                    
                   })
             ],
           );
         });
   }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +51,8 @@ class EnviarInfoPage extends StatelessWidget {
     String edad = data[1];
     String genero = data[2];
     String enfermedad = data[3];
+    print(enfermedad);
+    enfermedadCondition = enfermedad;
     return Scaffold(
       body: Container(
         width: double.infinity,
@@ -118,6 +135,7 @@ class EnviarInfoPage extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
+                              
                               RaisedButton.icon(
                                 onPressed: () {
                                   createAlertDialog(context);

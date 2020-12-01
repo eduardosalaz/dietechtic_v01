@@ -10,9 +10,11 @@ class HeaderGeneral extends StatelessWidget {
           Container(
             width: double.infinity,
             height: screenSize.height*0.25,
+            
             child: CustomPaint(
               painter: _HeaderBackGeneralPainter(),
             ),
+            
           ),
           Container(
             width: double.infinity,
@@ -20,7 +22,9 @@ class HeaderGeneral extends StatelessWidget {
             child: CustomPaint(
               painter: _HeaderFrontGeneralPainter(),
             ),
-          )
+          ),
+          
+          
         ],
       ),
     );

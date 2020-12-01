@@ -1,17 +1,20 @@
+import 'package:dietechtic_v01/src/pages/enviar_info_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class CarouselPhoto extends StatelessWidget {
+class CenaDiab extends StatelessWidget {
   final List<String> imgList = [
-    'assets/img/dietfast0.png',
-    'assets/img/dietfast1.png',
-    'assets/img/dietfast2.png'
+    'assets/img/cenaDiab_1.png',
+    'assets/img/cenaDiab_2.png',
+    'assets/img/cenaDiab_3.png'
   ];
+    
+  
   @override
   Widget build(BuildContext context) {
     final _pageController = new PageController(
         initialPage: (imgList.length / 2).floor(), viewportFraction: 0.6);
-
+    
     return ChangeNotifierProvider(
       create: (_) => _CarrousePhotoModel(),
       child: Container(
@@ -37,6 +40,9 @@ class CarouselPhoto extends StatelessWidget {
       ),
     );
   }
+
+  
+  
 }
 
 class _Image extends StatelessWidget {
@@ -50,6 +56,7 @@ class _Image extends StatelessWidget {
     final photoModel = Provider.of<_CarrousePhotoModel>(context);
     return InkWell(
       onTap: () {
+        
         Navigator.pushNamed(context, '/comidas_desc');
       },
       child: AnimatedContainer(
