@@ -1,6 +1,6 @@
 import 'package:dietechtic_v01/src/pages/enviar_info_page.dart';
 import 'package:dietechtic_v01/src/pages/comidaDiabetes.dart';
-import 'package:dietechtic_v01/src/widgets/carrouselDesayunoDiab.dart';
+import 'package:dietechtic_v01/src/widgets/carrouselDesayunoAn.dart';
 import 'package:dietechtic_v01/src/widgets/floating_nav_bar.dart';
 import 'package:dietechtic_v01/src/widgets/footer_general.dart';
 import 'package:dietechtic_v01/src/widgets/header_general.dart';
@@ -9,7 +9,7 @@ import 'package:dietechtic_v01/src/widgets/toogle_button_widget.dart';
 import 'package:flutter/material.dart';
 
 bool estadoDesayuno = true;
-class DesayunoDiabetes extends StatefulWidget {
+class DesayunoAnemia extends StatefulWidget {
   
   
   
@@ -21,7 +21,7 @@ class DesayunoDiabetes extends StatefulWidget {
 
 }
 
-class _ComidasPageState extends State<DesayunoDiabetes> {
+class _ComidasPageState extends State<DesayunoAnemia> {
   
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class _ComidasPageState extends State<DesayunoDiabetes> {
         child: Stack(
           children: <Widget>[
             HeaderGeneral(),
-            TitleWidgetPage(title: 'Diabetes  '),
+            TitleWidgetPage(title: 'Anemia'),
             Align(
               alignment: Alignment.bottomCenter,
               child: FooterGeneral()
@@ -73,10 +73,10 @@ class _Recetas extends StatelessWidget {
           opciones: ['Desayuno', 'Comida', 'Cena'],
           onPressed: (int value){
             if('$value'=='1'){
-              Navigator.of(context).pushReplacementNamed('/comidaDiabetes'); 
+              Navigator.of(context).pushReplacementNamed('/comidaAnemia'); 
             }
             else if('$value' == '2'){
-              Navigator.of(context).pushReplacementNamed('/cenaDiabetes'); 
+              Navigator.of(context).pushReplacementNamed('/cenaAnemia'); 
             }
             
             
@@ -87,7 +87,7 @@ class _Recetas extends StatelessWidget {
           inactiveTextColor: Colors.black,
         ),
         SizedBox(height: screenSize.height*0.02,),
-        DesayunoDiab(),
+        DesayunoAn(),
         
         SizedBox(height: screenSize.height*0.02,),
         Text(

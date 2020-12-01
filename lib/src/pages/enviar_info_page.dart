@@ -30,7 +30,9 @@ class EnviarInfoPage extends StatelessWidget {
                     switch(enfermedadCondition){
                       case 'Diabetes': Navigator.of(context).pushNamed('/desayunoDiabetes'); 
                             break;
-                      case 'Hipotiroidismo': Navigator.of(context).pushNamed('/mainHipotiroidismo');
+                      case 'Hipotiroidismo': Navigator.of(context).pushNamed('/desayunoHipotiroidismo');
+                            break;
+                      case 'Anemia': Navigator.of(context).pushNamed('/desayunoAnemia');
                             break;
                     }
                     

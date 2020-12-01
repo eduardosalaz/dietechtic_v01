@@ -1,6 +1,6 @@
 import 'package:dietechtic_v01/src/pages/enviar_info_page.dart';
 import 'package:dietechtic_v01/src/pages/comidaDiabetes.dart';
-import 'package:dietechtic_v01/src/widgets/carrouselDesayunoDiab.dart';
+import 'package:dietechtic_v01/src/widgets/carrouselCenaAn.dart';
 import 'package:dietechtic_v01/src/widgets/floating_nav_bar.dart';
 import 'package:dietechtic_v01/src/widgets/footer_general.dart';
 import 'package:dietechtic_v01/src/widgets/header_general.dart';
@@ -8,8 +8,8 @@ import 'package:dietechtic_v01/src/widgets/title_widget_page.dart';
 import 'package:dietechtic_v01/src/widgets/toogle_button_widget.dart';
 import 'package:flutter/material.dart';
 
-bool estadoDesayuno = true;
-class DesayunoDiabetes extends StatefulWidget {
+
+class CenaAnemia extends StatefulWidget {
   
   
   
@@ -21,7 +21,7 @@ class DesayunoDiabetes extends StatefulWidget {
 
 }
 
-class _ComidasPageState extends State<DesayunoDiabetes> {
+class _ComidasPageState extends State<CenaAnemia> {
   
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class _ComidasPageState extends State<DesayunoDiabetes> {
         child: Stack(
           children: <Widget>[
             HeaderGeneral(),
-            TitleWidgetPage(title: 'Diabetes  '),
+            TitleWidgetPage(title: 'Anemia'),
             Align(
               alignment: Alignment.bottomCenter,
               child: FooterGeneral()
@@ -70,13 +70,13 @@ class _Recetas extends StatelessWidget {
         ToogleButtonList(
           height: screenSize.height*0.05,
           
-          opciones: ['Desayuno', 'Comida', 'Cena'],
+          opciones: ['Cena', 'Comida', 'Desayuno'],
           onPressed: (int value){
             if('$value'=='1'){
-              Navigator.of(context).pushReplacementNamed('/comidaDiabetes'); 
+              Navigator.of(context).pushReplacementNamed('/comidaAnemia');  
             }
             else if('$value' == '2'){
-              Navigator.of(context).pushReplacementNamed('/cenaDiabetes'); 
+              Navigator.of(context).pushReplacementNamed('/desayunoAnemia'); 
             }
             
             
@@ -87,7 +87,7 @@ class _Recetas extends StatelessWidget {
           inactiveTextColor: Colors.black,
         ),
         SizedBox(height: screenSize.height*0.02,),
-        DesayunoDiab(),
+        CenaAn(),
         
         SizedBox(height: screenSize.height*0.02,),
         Text(
@@ -99,7 +99,7 @@ class _Recetas extends StatelessWidget {
         ),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: screenSize.width*0.1, vertical: screenSize.height*0.01),
-          child: Text('Cada vez que comes, es una oportunidad de nutrir a tu cuerpo.'),
+          child: Text('Veniam aute ex nostrud aliquip excepteur do sit. Ullamco excepteur et voluptate do officia ipsum. Ullamco nisi officia pariatur in cupidatat aliquip aliqua laborum laboris sint aute.'),
         )
       ],
     );

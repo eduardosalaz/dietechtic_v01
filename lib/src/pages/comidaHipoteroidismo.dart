@@ -1,6 +1,6 @@
 import 'package:dietechtic_v01/src/pages/enviar_info_page.dart';
-import 'package:dietechtic_v01/src/pages/comidaDiabetes.dart';
-import 'package:dietechtic_v01/src/widgets/carrouselDesayunoDiab.dart';
+import 'package:dietechtic_v01/src/pages/desayunoDiabetes.dart';
+import 'package:dietechtic_v01/src/widgets/carrouselComidaHipo.dart';
 import 'package:dietechtic_v01/src/widgets/floating_nav_bar.dart';
 import 'package:dietechtic_v01/src/widgets/footer_general.dart';
 import 'package:dietechtic_v01/src/widgets/header_general.dart';
@@ -8,23 +8,17 @@ import 'package:dietechtic_v01/src/widgets/title_widget_page.dart';
 import 'package:dietechtic_v01/src/widgets/toogle_button_widget.dart';
 import 'package:flutter/material.dart';
 
-bool estadoDesayuno = true;
-class DesayunoDiabetes extends StatefulWidget {
-  
-  
-  
+
+class ComidaHipoteroidismo extends StatefulWidget {
   
 @override
   _ComidasPageState createState() => _ComidasPageState();
-
-
-
 }
 
-class _ComidasPageState extends State<DesayunoDiabetes> {
-  
+class _ComidasPageState extends State<ComidaHipoteroidismo> {
   @override
   Widget build(BuildContext context) {
+    estadoDesayuno = false;
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
@@ -32,7 +26,7 @@ class _ComidasPageState extends State<DesayunoDiabetes> {
         child: Stack(
           children: <Widget>[
             HeaderGeneral(),
-            TitleWidgetPage(title: 'Diabetes  '),
+            TitleWidgetPage(title: 'Hipoteroidismo'),
             Align(
               alignment: Alignment.bottomCenter,
               child: FooterGeneral()
@@ -70,24 +64,22 @@ class _Recetas extends StatelessWidget {
         ToogleButtonList(
           height: screenSize.height*0.05,
           
-          opciones: ['Desayuno', 'Comida', 'Cena'],
-          onPressed: (int value){
+          opciones: ['Comida', 'Desayuno', 'Cena'],
+          onPressed: (value){
             if('$value'=='1'){
-              Navigator.of(context).pushReplacementNamed('/comidaDiabetes'); 
+              Navigator.of(context).pushReplacementNamed('/desayunoHipotiroidismo'); 
             }
             else if('$value' == '2'){
-              Navigator.of(context).pushReplacementNamed('/cenaDiabetes'); 
+              Navigator.of(context).pushReplacementNamed('/cenaHipotiroidismo'); 
             }
-            
-            
           },
-          
+                
           activeColor: Color(0xff73a270),
           activeTextColor: Colors.white,
           inactiveTextColor: Colors.black,
         ),
         SizedBox(height: screenSize.height*0.02,),
-        DesayunoDiab(),
+        ComidaHipo(),
         
         SizedBox(height: screenSize.height*0.02,),
         Text(
