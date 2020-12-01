@@ -1,5 +1,6 @@
 import 'package:dietechtic_v01/src/pages/enviar_info_page.dart';
 import 'package:dietechtic_v01/src/pages/desayunoDiabetes.dart';
+import 'package:dietechtic_v01/src/utils/authentication_service.dart';
 import 'package:dietechtic_v01/src/widgets/carrouselComidaDiab.dart';
 import 'package:dietechtic_v01/src/widgets/floating_nav_bar.dart';
 import 'package:dietechtic_v01/src/widgets/footer_general.dart';
@@ -8,6 +9,7 @@ import 'package:dietechtic_v01/src/widgets/title_widget_page.dart';
 import 'package:dietechtic_v01/src/widgets/toogle_button_widget.dart';
 import 'package:flutter/material.dart';
 
+import 'package:provider/provider.dart';
 
 class ComidaDiabetes extends StatefulWidget {
   
@@ -80,7 +82,24 @@ class _Recetas extends StatelessWidget {
         ),
         SizedBox(height: screenSize.height*0.02,),
         ComidaDiab(),
-        
+        RaisedButton(
+                      child: Text(
+                        'Cerrar Sesión',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                      ),
+                      onPressed: () {
+                        context.read<AuthenticationService>().signOut();
+                        Navigator.of(context).pushReplacementNamed('/login');  
+                      },
+                      elevation: 5.0,
+                      color: Color(0xff73a720),
+                      //splashColor: Color(0xff567c18),
+                      //animationDuration: Duration(
+                      //  seconds: 1), //color oscuro cuando se seleccione
+                    ),
         SizedBox(height: screenSize.height*0.02,),
         Text(
           'Consejo del día',

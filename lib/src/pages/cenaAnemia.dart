@@ -91,7 +91,7 @@ class _Recetas extends StatelessWidget {
         CenaAn(),
         RaisedButton(
                       child: Text(
-                        'Siguiente',
+                        'Cerrar Sesión',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18,
@@ -99,6 +99,7 @@ class _Recetas extends StatelessWidget {
                       ),
                       onPressed: () {
                         context.read<AuthenticationService>().signOut();
+                        Navigator.of(context).pushReplacementNamed('/login');  
                       },
                       elevation: 5.0,
                       color: Color(0xff73a720),

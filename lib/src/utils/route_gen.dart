@@ -36,6 +36,7 @@ import 'package:dietechtic_v01/src/pages/cenaHipoteroidismo.dart';
 import 'package:dietechtic_v01/src/pages/desayunoAnemia.dart';
 import 'package:dietechtic_v01/src/pages/comidaAnemia.dart';
 import 'package:dietechtic_v01/src/pages/cenaAnemia.dart';
+import 'package:dietechtic_v01/src/pages/login_page.dart';
 import 'package:dietechtic_v01/src/pages/objetivos_page.dart';
 import 'package:flutter/material.dart';
 import 'package:dietechtic_v01/main.dart';
@@ -126,6 +127,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => CenaAnemia2());
       case '/cenaAnemia-3':
         return MaterialPageRoute(builder: (_) => CenaAnemia3());
+      case '/login':
+        return MaterialPageRoute(builder: (_) => LoginPage());
       
 
       
