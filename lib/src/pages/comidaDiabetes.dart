@@ -91,7 +91,7 @@ class _Recetas extends StatelessWidget {
         ),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: screenSize.width*0.1, vertical: screenSize.height*0.01),
-          child: Text('Veniam aute ex nostrud aliquip excepteur do sit. Ullamco excepteur et voluptate do officia ipsum. Ullamco nisi officia pariatur in cupidatat aliquip aliqua laborum laboris sint aute.'),
+          child: Text('Cada vez que comes, es una oportunidad de nutrir a tu cuerpo.'),
         )
       ],
     );
