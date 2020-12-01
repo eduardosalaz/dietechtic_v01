@@ -5,6 +5,8 @@ import 'package:dietechtic_v01/src/pages/desayunoDiabetes-1.dart';
 import 'package:dietechtic_v01/src/pages/desayunoDiabetes-2.dart';
 import 'package:dietechtic_v01/src/pages/desayunoDiabetes-3.dart';
 import 'package:dietechtic_v01/src/pages/cenaDiabetes-1.dart';
+import 'package:dietechtic_v01/src/pages/cenaDiabetes-2.dart';
+import 'package:dietechtic_v01/src/pages/cenaDiabetes-3.dart';
 import 'package:dietechtic_v01/src/pages/comidaDiabetes.dart';
 import 'package:dietechtic_v01/src/pages/desayunoDiabetes.dart';
 import 'package:dietechtic_v01/src/pages/cenaDiabetes.dart';
@@ -51,6 +53,10 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => DesayunoDiabetes3());
       case '/cenaDiabetes-1':
         return MaterialPageRoute(builder: (_) => CenaDiabetes1());
+      case '/cenaDiabetes-2':
+        return MaterialPageRoute(builder: (_) => CenaDiabetes2());
+      case '/cenaDiabetes-3':
+        return MaterialPageRoute(builder: (_) => CenaDiabetes3());
       default:
         return _errorRoute();
     }

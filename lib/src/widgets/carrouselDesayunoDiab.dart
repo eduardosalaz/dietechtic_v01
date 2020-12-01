@@ -56,8 +56,18 @@ class _Image extends StatelessWidget {
     final photoModel = Provider.of<_CarrousePhotoModel>(context);
     return InkWell(
       onTap: () {
+
+        if(index == 0){
+          Navigator.pushNamed(context, '/desayunoDiabetes-1');
+        }
+        else if(index == 1){
+          Navigator.pushNamed(context, '/desayunoDiabetes-2');
+        }
+        else if(index == 2){
+          Navigator.pushNamed(context, '/desayunoDiabetes-3');
+        }
         
-        Navigator.pushNamed(context, '/comidas_desc');
+        
       },
       child: AnimatedContainer(
           duration: Duration(milliseconds: 300),
