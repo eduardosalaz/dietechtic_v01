@@ -34,6 +34,12 @@ class EnviarInfoPage extends StatelessWidget {
                             break;
                       case 'Anemia': Navigator.of(context).pushNamed('/desayunoAnemia');
                             break;
+                      case 'Hipotiroidismo y Diabetes': Navigator.of(context).pushNamed('/desayunoHipoYDiabetes');
+                            break;
+                      case 'Diabetes y Anemia': Navigator.of(context).pushNamed('/desayunoDiabetesYAnemia');
+                            break;
+                      case 'Hipotiroidismo y Anemia': Navigator.of(context).pushNamed('/desayunoHipoYAnemia');
+                            break;
                     }
                     
               

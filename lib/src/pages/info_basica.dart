@@ -146,7 +146,7 @@ class MyCustomFormState extends State<MyCustomForm> {
   final TextEditingController ageController = TextEditingController();
   String _value;
   List<String> generos = ["Masculino", "Femenino"];
-  List<String> enfermedades = ["Diabetes", "Hipotiroidismo", "Anemia"];
+  List<String> enfermedades = ["Diabetes", "Hipotiroidismo", "Anemia", "Hipotiroidismo y Diabetes", "Diabetes y Anemia", "Hipotiroidismo y Anemia"];
   String dropdownValue2 = "Diabetes";
   String dropdownValue = "Masculino";
 

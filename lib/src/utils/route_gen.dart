@@ -40,7 +40,15 @@ import 'package:dietechtic_v01/src/pages/login_page.dart';
 import 'package:dietechtic_v01/src/pages/objetivos_page.dart';
 import 'package:flutter/material.dart';
 import 'package:dietechtic_v01/main.dart';
-
+import 'package:dietechtic_v01/src/pages/desayunoHipoYDiabetes.dart';
+import 'package:dietechtic_v01/src/pages/comidaHipoYDiabetes.dart';
+import 'package:dietechtic_v01/src/pages/cenaHipoYDiabetes.dart';
+import 'package:dietechtic_v01/src/pages/desayunoDiabetesYAnemia.dart';
+import 'package:dietechtic_v01/src/pages/comidaDiabetesYAnemia.dart';
+import 'package:dietechtic_v01/src/pages/cenaDiabetesYAnemia.dart';
+import 'package:dietechtic_v01/src/pages/desayunoHipoYAnemia.dart';
+import 'package:dietechtic_v01/src/pages/comidaHipoYAnemia.dart';
+import 'package:dietechtic_v01/src/pages/cenaHipoYAnemia.dart';
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     final args = settings.arguments;
@@ -129,10 +137,25 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => CenaAnemia3());
       case '/login':
         return MaterialPageRoute(builder: (_) => LoginPage());
-      
+      case '/desayunoHipoYDiabetes':
+        return MaterialPageRoute(builder: (_) => DesayunoHipoYDiabetes());
+      case '/comidaHipoYDiabetes':
+        return MaterialPageRoute(builder: (_) => ComidaHipoYDiabetes());
+      case '/cenaHipoYDiabetes':
+        return MaterialPageRoute(builder: (_) => CenaHipoYDiabetes());
+      case '/desayunoDiabetesYAnemia':
+        return MaterialPageRoute(builder: (_) => DesayunoDiabetesYAnemia());
+      case '/comidaDiabetesYAnemia':
+        return MaterialPageRoute(builder: (_) => ComidaDiabetesYAnemia());
+      case '/cenaDiabetesYAnemia':
+        return MaterialPageRoute(builder: (_) => CenaDiabetesYAnemia());
+      case '/desayunoHipoYAnemia':
+        return MaterialPageRoute(builder: (_) => DesayunoHipoYAnemia());
+      case '/comidaHipoYAnemia':
+        return MaterialPageRoute(builder: (_) => ComidaHipoYAnemia());
+      case '/cenaHipoYAnemia':
+        return MaterialPageRoute(builder: (_) => CenaHipoYAnemia());
 
-      
-      
       default:
         return _errorRoute();
     }
